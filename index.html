@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="sharkawi_title-main">Dev. by A.Sharkawi</h1>
+    <div class="sharkawi_container">
+        <h1 class="sharkawi_h1">Task Manager</h1>
+        <div>
+            <label class="sharkawi_label" for="sharkawi_taskName">Task Name:</label>
+            <input class="sharkawi_input" type="text" id="sharkawi_taskName" required>
+            <span class="sharkawi_required" id="sharkawi_taskNameRequired">* Required</span>
+        </div>
+        <div>
+            <label class="sharkawi_label" for="sharkawi_taskDescription">Task Description:</label>
+            <input class="sharkawi_input" type="text" id="sharkawi_taskDescription" required>
+            <span class="sharkawi_required" id="sharkawi_taskDescriptionRequired">* Required</span>
+        </div>
+        <div>
+            <label class="sharkawi_label" for="sharkawi_dueDate">Due Date:</label>
+            <input class="sharkawi_input" type="text" id="sharkawi_dueDate" required>
+            <span class="sharkawi_required" id="sharkawi_dueDateRequired">* Required</span>
+        </div>
+        <button class="sharkawi_button" onclick="sharkawi_addTask()">Add Task</button>
+        <button class="sharkawi_button" onclick="sharkawi_clearAllTasks()">Clear All Tasks</button>
+        <button class="sharkawi_button" onclick="sharkawi_displayTasks()">Display Tasks</button>
+        <button class="sharkawi_button" onclick="sharkawi_openChangeStatusModal()">Change Task Status</button>
+        <ul class="sharkawi_ul" id="sharkawi_taskList"></ul>
+    </div>
+
+    <div id="sharkawi_addTaskSuccessModal" class="sharkawi_modal">
+        <div class="sharkawi_modal-content">
+            <span class="sharkawi_close" onclick="sharkawi_closeAddTaskSuccessModal()">&times;</span>
+            <p id="sharkawi_addTaskSuccessMessage">Task added successfully!</p>
+        </div>
+    </div>
+
+
+    <div id="sharkawi_changeStatusModal" class="sharkawi_modal">
+        <div class="sharkawi_modal-content">
+            <span class="sharkawi_close" onclick="sharkawi_closeChangeStatusModal()">&times;</span>
+            <label class="sharkawi_label" for="sharkawi_taskNameInput">Task Name:</label>
+            <input class="sharkawi_input" type="text" id="sharkawi_taskNameInput" required>
+            <span class="sharkawi_required" id="sharkawi_changeStatusRequired">* Required</span>
+            <button class="sharkawi_button" onclick="sharkawi_markTaskAsFinished()">Mark as Finished</button>
+            <p id="sharkawi_changeStatusMessage"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
